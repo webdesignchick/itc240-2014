@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 13, 2014, 1:22:44 PM
+    Author     : ellen
+*/
+/*color scheme
+#2D2D2E Tricorn Black
+#7E6A86 Wood Violet
+#9DA0B3 Vesper Violet
+#44484D Cyberspace
+#F1ECEE Snowberry
+*/
+
+            * {margin: 0; padding: 0;}
+            html {background: #7E6A86; }
+            header {font-family: fantasy; padding: 5% 5% 1% 5%; background: #7E6A86; color: #f1ecee;border-bottom: 3px #44484d groove;}
+            h1 {margin-bottom: 1%; text-shadow: 3px 4px 5px #2d2d2e; font-size: 3em;}
+            header p {color:#2d2d2e;font-size: 1.25em;}
+            body {background: #f1ecee; color:#2d2d2e;}
+            nav {padding: .5% 5%;background-color:#9DA0B3;border-bottom: 3px #44484d groove; }
+            nav ul li {display:inline-block;font-size: 1.25em;list-style: none; padding-right: .5%; }
+            li a {text-decoration: none; color: inherit}
+            li a:hover {font-weight: bold;}
+            main  {margin: 1% 5% ; display: inline-block; }
+            
+            footer {display:block;border-top: 5px #44484d groove;position: absolute; width: 100%; text-align: left; padding: 1% 0 3% 0; background: #7E6A86; color: #9DA0B3;}
+            footer ul li {list-style: none; display:inline-block; padding-right: .5%; }
+            small {text-indent: 2% }
+            small p {; margin:.5% 2% 2% 2%;}
+            small a {text-decoration: none; color: inherit}
+            small a:hover {font-weight: bold;}
+            main p {text-indent: 2em; padding-bottom: 1%;}
