@@ -1,5 +1,5 @@
        <?php include 'include/head.php';
-       $page_title = "Home";
+      $page_title = "Home";
 
        ?>
 
