@@ -5,6 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php 
+//Superglobals
         $name = htmlentities($_REQUEST["name"]);
         if ($name == "Ellen") {
             $name = "EXHAUSTED";
