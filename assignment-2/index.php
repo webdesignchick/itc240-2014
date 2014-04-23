@@ -29,7 +29,7 @@
             Number
             <input name ="numberOne" placeholder="Pick a number">
             Number
-            <input name ="numberTwo" placeholder="a number between 1 and 12">
+            <input name ="numberTwo" placeholder="number between 1 & 12">
               <button> Make me laugh! </button>
                <?php
         } else {
