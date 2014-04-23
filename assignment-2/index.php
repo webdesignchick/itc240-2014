@@ -1,5 +1,6 @@
-       <?php include 'include/head.php';
-      $page_title = "We're all MAD here!";
+       <?php
+     // $page_title =  ["We're all MAD here!"];
+      include 'include/head.php';
 
        ?>
  <?php

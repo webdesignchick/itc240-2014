@@ -1,9 +1,9 @@
     </main>
         <footer> <small>
                  <ul>
-                <li> <a href="index.php">Home </a></li>
-                <li> <a href="#"> Assignment 2</a></li>
-                <li> <a href="#"> Assignment 3</a></li>
+                <li> <a href="http://zephir.seattlecentral.edu/~etacke01//itc240-2014/assignment-1/">Assignment 1</a></li>
+                <li> <a href="http://zephir.seattlecentral.edu/~etacke01//itc240-2014/assignment-2/"> Assignment 2</a></li>
+                <li> <a href="http://zephir.seattlecentral.edu/~etacke01//itc240-2014/assignment-3/"> Assignment 3</a></li>
             </ul>
                 <p>
                 
