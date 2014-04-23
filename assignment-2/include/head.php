@@ -4,12 +4,8 @@
         <meta charset="UTF-8">
         <title><?php echo $page_title ?></title>
         <meta name="robots" content="noindex,nofollow" />
-        <style>
-            * {margin:0 auto;padding:0 auto;}
-	body {margin: 10%;}	
-	img { max-width:70%;}
-            
-            </style>
+        <link href="css/etitc240.css" rel="stylesheet" type="text/css"/>
+
     </head>
     <body>
         <header>
