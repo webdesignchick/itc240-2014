@@ -11,6 +11,7 @@
         ?>
    
         <form method="post">
+            
             Verb
             <input name="verbOne" placeholder="word ending in ...ing">
             Noun
@@ -26,7 +27,7 @@
             Verb
             <input name="verbTwo" placeholder="word ending in ...ing">
             Adjective
-            <input name="adjectiveTwo" placeholder="pick another tone">
+            <input name="adjectiveTwo" placeholder="describe">
             Number
             <input name ="numberOne" placeholder="Pick a number">
             Number
@@ -35,8 +36,10 @@
                <?php
         } else {
         ?>
-            <pre> <?php print_r ($_REQUEST);?>
-            </pre>
+        <!--  
+        <pre> <?php print_r ($_REQUEST);?></pre> 
+              -->
+              <br>
         <?=$_REQUEST["verbOne"]; 
             ?> down 
         <?=$_REQUEST["nounOne"]; 
@@ -59,15 +62,16 @@
         <?=$_REQUEST ["adjectiveTwo"];
             ?>
         <?=$_REQUEST ["nounThree"];
-            ?>""
-            <br>    
+            ?>"
+            <br>    "
         <?php if ($_REQUEST["numberOne"] >10) {
                 echo "I don't think so I am going to go to get some sleep.";
             } 
             else {
                 echo "Definitely that is a great idea I will meet you in an hour.";
             }
-?>
+            ?>"
+            <br>
         <?php if ($_REQUEST["numberTwo"] == 11) {
                 echo "and they lived Happily ever after.  The End";
             }
@@ -77,7 +81,7 @@
 
             
         ?>
-            <br>
+            <br><br>
         <a href="index.php">Was that funny? Want to try again?</a>
         <?php
         }
