@@ -38,7 +38,7 @@
             <pre> <?php print_r ($_REQUEST);?>
             </pre>
         <?=$_REQUEST["verbOne"]; 
-            ?> down the 
+            ?> down 
         <?=$_REQUEST["nounOne"]; 
             ?> Street at
         <?=$_REQUEST ["time"];
@@ -77,6 +77,7 @@
 
             
         ?>
+            <br>
         <a href="index.php">Was that funny? Want to try again?</a>
         <?php
         }
