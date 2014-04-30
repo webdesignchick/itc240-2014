@@ -17,7 +17,8 @@ $show = "all";
 if (isset($_REQUEST["show"])){
     $show = $_REQUEST["show"];
 }
-else {  include 'main.php'; 
-}
+
+include 'main.php'; 
+
 include 'include/footer.php';
 ?>

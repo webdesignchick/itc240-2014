@@ -1,10 +1,10 @@
 
         <h1>Avengers</h1>
         <a href="?show=all"> List View &nbsp; </a> 
-       <!-- <a href="?show=image"> Image View </a> 
+        <a href="?show=image"> Image View </a> 
         <a href="?show=girls"> The 'Girls' &nbsp;</a>
         <a href="?show=links"> More Information &nbsp;</a>
-      -->  
+ 
         <ul>
             
             <?php
@@ -21,7 +21,10 @@
                 else if ($show == "links") {
                 include ("links.php");
                  }
-                }
+                 else 
+                     include ("lines.php");
+       
+            }
             
             ?>
         </ul>
