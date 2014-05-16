@@ -18,9 +18,6 @@ and open the template in the editor.
         
         $result = $mysql->query('SELECT * FROM comicHero ORDER BY origin ASC, type ASC;');
        
-        
-        
-        
        
                  ?>
         <table>
