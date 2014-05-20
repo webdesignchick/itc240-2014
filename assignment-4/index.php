@@ -8,6 +8,11 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>Assignment 4</title>
+        
+        <style>
+            table {border: 1px solid black}
+            td {border: 1px solid black}
+            </style>
     </head>
     <body>
         <?php
@@ -22,38 +27,16 @@ and open the template in the editor.
         //exit();}
         
                
-       $prepared = $mysql->prepare("INSERT INTO comicHero (name, alias, origin, girl, archnemesis, id)
-             VALUES 
-                    ('Steve Rodgers', 'Captain America', 1941, 'Red Skull', 'Sharon Carter', '?'),
-                    ('Bruce Banner', 'Hulk', 1962, 'Tyrannus', 'Betty Ross', '?'),
-                    ('Thor Odinson', 'Thor', 1951, 'Loki', 'Sif', '?'),
-                    ('Peter Parker', 'Spiderman', 1962, 'Green Goblin', 'Gwen Stacy', '?'),
-                    ('Clint Barton', 'Hawkeye', 1964, 'Assassin', 'Barbara Barton: Mockingbird', '?'),
-                    ('Natalia Alianovna Romanova', 'Black Widow', 1964, 'Black Spectre', 'Alexi Shostakov: Red Guardian', '?');");       
-   
-       $prepared->bind_param("ssissi", 
-               $_REQUEST["name"],
-               $_REQUEST["alias"],
-               $_REQUEST["origin"],
-               $_REQUEST["girl"],
-               $_REQUEST["archnemesis"], 
-               $_REQUEST["id"]);
                
-       $prepared->execute();
-         $result = $mysql->query('SELECT * FROM comicHero ORDER BY origin ASC, type ASC');
-       $mysql->close();
+       $result = $mysql->query('SELECT * FROM comicHero');
        
       
        
         
     
 //$result = $mysql->query('SELECT * FROM comicHero()');
- //print_r($result);
-       foreach ( $result as $show ){
-           
-       }
    
-                 ?>
+                ?>
         <table>
            
             <tr>
@@ -65,6 +48,11 @@ and open the template in the editor.
                 <th>Id</th>
             </tr>
             <tr>
+                <?php  foreach ( $result as $show ){
+           
+   
+   
+       ?>
             <td><?=$show["name"]?></td>
             <td><?=$show["alias"]?></td>
             <td><?=$show["origin"]?></td>
@@ -73,6 +61,9 @@ and open the template in the editor.
             <td><?=$show["id"]?></td>
 
             </tr>
+<?php
+    }?>
+
         </table>
 
     </body>
