@@ -11,7 +11,8 @@ and open the template in the editor.
         
         <style>
             table {border: 1px solid black}
-            td {border: 1px solid black}
+            td {border: 1px solid black;
+            padding: 5px}
             </style>
     </head>
     <body>
@@ -56,8 +57,8 @@ and open the template in the editor.
             <td><?=$show["name"]?></td>
             <td><?=$show["alias"]?></td>
             <td><?=$show["origin"]?></td>
-            <td><?=$show["girl"]?></td>
             <td><?=$show["archnemesis"]?></td>
+            <td><?=$show["girl"]?></td>
             <td><?=$show["id"]?></td>
 
             </tr>
