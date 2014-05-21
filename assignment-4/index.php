@@ -50,9 +50,7 @@ and open the template in the editor.
             </tr>
             <tr>
                 <?php  foreach ( $result as $show ){
-           
-   
-   
+            
        ?>
             <td><?=$show["name"]?></td>
             <td><?=$show["alias"]?></td>
