@@ -15,7 +15,7 @@
       
         include 'password.php';
         include 'insert.php';
-        
+        include 'displaytotals.php'
         /* check connection */
         //if (mysqli_connect_errno()) {
         //printf("Connect failed: %s\n", mysqli_connect_error());
