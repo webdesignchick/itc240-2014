@@ -66,6 +66,7 @@
         <br>
         <br>
         <br>
-    
+        <a href="insert.php">Add Another Transaction</a>
+             <a href="displaytotals.php">Totals</a>
     </body>
         </html>
