@@ -14,8 +14,8 @@
         <?php
       
         include 'password.php';
-        include 'insert.php';
-        include 'displaytotals.php'
+        
+        
         /* check connection */
         //if (mysqli_connect_errno()) {
         //printf("Connect failed: %s\n", mysqli_connect_error());
@@ -24,7 +24,9 @@
                
                
        $result = $mysql->query('SELECT * FROM receiptTracker');
-?>
+        
+        
+        ?>
 
         <table>
             <tr>
@@ -45,12 +47,12 @@
                 <td><?= $show["cost"]?></td>
                 <td><?= $show["why"]?></td>
                 <td><?= $show["entry"]?></td>
-                
-            <?php
-                }
-?>                    
+                 
             </tr>
             
+            <?php
+                }
+?>                   
             
             
             
@@ -60,5 +62,10 @@
             
             
         </table>
-        </body>
+        <br>
+        <br>
+        <br>
+        <br>
+    
+    </body>
         </html>

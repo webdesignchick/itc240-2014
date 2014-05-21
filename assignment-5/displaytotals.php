@@ -1,6 +1,7 @@
 <?php
-$num_rows = mysql_num_rows($result);
 
+       $result = $mysql->query('SELECT * FROM receiptTracker');
+        
 ?>
 <table>
             <tr>
@@ -15,22 +16,33 @@ $num_rows = mysql_num_rows($result);
                 <?php 
                 foreach ($result as $show) {
 ?>
-                <td><?= $show["who"]?></td>
-                <td><?= $show["location"]?></td>
-                <td><?= $show["spent_on"]?></td>
-                <td><?= $show["cost"]?></td>
-                <td><?= $show["why"]?></td>
-                <td><?= $show["entry"]?></td>
+                <td><?= htmlentities($show["who"])?></td>
+                <td><?= htmlentities($show["location"])?></td>
+                <td><?= htmlentities($show["spent_on"])?></td>
+                <td><?= htmlentities($show["cost"])?></td>
+                <td><?= htmlentities($show["why"])?></td>
+                <td><?= htmlentities($show["entry"])?></td>
                 
             <?php
                 }
+    $sumQuery = $mysql->prepare ('SELECT sum(cost) AS total FROM receiptTracker');
+    $sumQuery->execute();
+    $sumResult = $sumQuery->get_result();
+    
+    $sum = $sumResult->fetch_array ();
+    
 ?>                    
             </tr>
             <tr>
-                
-                <td>Number of Transactions<?="$num_rows Rows\n";?></td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-                
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th><?= $sum['total'] ?></th>
+                <th> </th>
+                <th> </th>
             </tr>
+</table>
+
+        <br>
+        <br>
+        <br>
