@@ -14,20 +14,38 @@
         
 
 <?php
-
 include 'password.php';
-include 'edit.php';
+$column = "entry";
+if (isset($_REQUEST["sort"])){
+$column = $_REQUEST["sort"];
+}
+$column = $mysql->real_escape_string($column);
 
-
+$prepared= $mysql->prepare("SELECT * FROM kittyWorkout ORDER BY $column ASC;");
+$whitelist =[
+    "calories" =>TRUE,
+    "entry"=> TRUE,
+    "activity"=> TRUE    
+];
+if (isset($whitelist[$column])){
+    $column='activity';
+    
+    $prepared->execute ();
+    $result = $prepared-> get_result();
+    
+}
 ?>
 
 <h3>Input Neko's Activities</h3>
-<form>
+<form method="POST" action="entry.php">
     <input type="text" name="activity" placeholder="Activity">
     <input type="number" name="calories" placeholder="Calories">
-      
+    <input type="submit">  
 </form>
-<h3>Neko's Activities</h3>
+<h3>View Neko's Activities</h3>
+<a href="?sort=calories">Sort Entries By Calories</a>
+<a href="?sort=entry">Sort Entries By Entry</a>
+<a href="?sort=activity">Sort Entries By Activity</a>
 <table>
     <tr>
         <th>When</th>
@@ -37,7 +55,9 @@ include 'edit.php';
     </tr>
     
     <tr>
-    <? foreach ($results as $show) {
+    <?php 
+    
+    foreach ($results as $show) {
     
     ?>
     <td><?= htmlentities($show["entry"])?></td>       
@@ -47,22 +67,33 @@ include 'edit.php';
     </tr>
 <?php
 }
-?>
+
+    $sumQuery=$mysql->prepare('SELECT SUM(calories)as sumCal FROM kittyWorkout');
+    $sumQuery->execute();
+    $sumResult= $sumQuery->get_result;
+    $sum=$sumResult->fetch_array();
+    
+    $maxQuery=$mysql->prepare('SELECT MAX(calories)as maxCal FROM kittyWorkout');
+    $maxQuery->execute();
+    $maxResult= $maxQuery->get_result;
+    $max=$maxResult->fetch_array();
+    
+    $countResult=$mysql->query('SELECT COUNT(*) as rows FROM kittywWorkout;');
+    $count=$countResult->fetch_array();
+    ?>
     <tr>
         <th colspan="2">
             Number of Activities
         </th>
         <th>
-           <?= //count ?> 
+           <?= htmlentities($count["rows"])  ?> 
         </th>
         
-    </tr>    
-    <tr>
-        <th colspan="2">
+           <th colspan="2">
             Total Calories Burned
         </th>
         <th>
-           <?= //sum ?> 
+           <?= htmlentities($sum["sumCal"]) ?> 
         </th>
         
     </tr>    
@@ -71,9 +102,8 @@ include 'edit.php';
             Max Calories Burned
         </th>
         <th>
-           <?= //max ?> 
+           <?= htmlentities($max["maxCal"]) ?> 
         </th>
-        
     </tr>    
     
 </table>
@@ -86,7 +116,7 @@ include 'edit.php';
 <!--
 <h3>Total Calories Burned</h3>
 <p>
-    Entry Count <?= ?> 
+    
 </p>
 <h3>Max Calories Burned</h3>
 -->
