@@ -6,6 +6,9 @@ include 'password.php';
  * and open the template in the editor.
  */
 
+
+
+
 $query='insert into tracker_food (calories,type,eaten_on) VALUES (?,?,NOW());';
 $prepared = $mysql->prepare ($query);
 $prepared->bind_param("is", $_REQUEST["calories"],$_REQUEST["type"]);
