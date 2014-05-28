@@ -15,6 +15,7 @@
 
 <?php
 include 'password.php';
+
 $column = "entry";
 if (isset($_REQUEST["sort"])){
 $column = $_REQUEST["sort"];
@@ -53,13 +54,13 @@ if (isset($whitelist[$column])){
         <th>Calories Burned</th>
         
     </tr>
+     <tr>
+   <?php 
     
-    <tr>
-    <?php 
+    foreach ($result as $show) {
     
-    foreach ($results as $show) {
-    
-    ?>
+    ?> 
+   
     <td><?= htmlentities($show["entry"])?></td>       
     <td><?= htmlentities($show["activity"])?></td>       
     <td><?= htmlentities($show["calories"])?></td>       
@@ -67,7 +68,8 @@ if (isset($whitelist[$column])){
     </tr>
 <?php
 }
-
+?>
+    <?php
     $sumQuery=$mysql->prepare('SELECT SUM(calories)as sumCal FROM kittyWorkout');
     $sumQuery->execute();
     $sumResult= $sumQuery->get_result;
