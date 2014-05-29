@@ -80,8 +80,8 @@ if (isset($whitelist[$column])){
     $maxResult= $maxQuery->get_result();
     $max=$maxResult->fetch_array();
     
-    $countResult=$mysql->query('SELECT COUNT(*) as rows FROM kittywWorkout;');
-  //  $count=$countResult->fetch_array();
+    $countResult=$mysql->query('SELECT COUNT(*) as rows FROM kittyWorkout;');
+    $count=$countResult->fetch_array();
     ?>
     <tr>
         <th colspan="2">
