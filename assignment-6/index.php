@@ -72,16 +72,16 @@ if (isset($whitelist[$column])){
     <?php
     $sumQuery=$mysql->prepare('SELECT SUM(calories)as sumCal FROM kittyWorkout');
     $sumQuery->execute();
-    $sumResult= $sumQuery->get_result;
+    $sumResult = $sumQuery->get_result();
     $sum=$sumResult->fetch_array();
     
     $maxQuery=$mysql->prepare('SELECT MAX(calories)as maxCal FROM kittyWorkout');
     $maxQuery->execute();
-    $maxResult= $maxQuery->get_result;
+    $maxResult= $maxQuery->get_result();
     $max=$maxResult->fetch_array();
     
     $countResult=$mysql->query('SELECT COUNT(*) as rows FROM kittywWorkout;');
-    $count=$countResult->fetch_array();
+  //  $count=$countResult->fetch_array();
     ?>
     <tr>
         <th colspan="2">
@@ -90,7 +90,8 @@ if (isset($whitelist[$column])){
         <th>
            <?= htmlentities($count["rows"])  ?> 
         </th>
-        
+    </tr>
+    <tr>
            <th colspan="2">
             Total Calories Burned
         </th>
